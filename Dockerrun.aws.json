@@ -1,0 +1,12 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "haibuidev1996/backend-api",
+      "hostname": "client",
+      "essential": false,
+      "memory": 128
+    }
+  ]
+}

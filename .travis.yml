@@ -1,6 +1,8 @@
 sudo: required
 
-language: generic
+language: node_js
+node_js:
+  - 12
 
 branches:
   only:
@@ -18,3 +20,16 @@ after_success:
   - echo docker logout
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push $DOCKER_ID/backend-api
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "ap-southeast-1"
+#   app: "multi-docker"
+#   env: MultiDocker-env
+#   bucket_name: "elasticbeanstalk-ap-southeast-1-647466573283"
+#   bucket_path: "docker-multi"
+#   on:
+#     branch: master
+#   access_key_id: "$AWS_ACCESS_KEY"
+#   secret_access_key: "$AWS_SCRET_ACCESS_KEY"
+#   edge: true
