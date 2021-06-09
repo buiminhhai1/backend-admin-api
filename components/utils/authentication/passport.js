@@ -67,7 +67,5 @@ const local = new LocalStrategy({
       .catch(err => cb(err));
   });
 
-
-
 passport.use(jwt);
 passport.use(local);
